@@ -1,0 +1,18 @@
+<h1>{{customer.customerId == null ? 'Add' : 'Edit'}} Customer {{customer.customerId}}</h1>
+<form #recievedUser="ngForm">
+
+  <label for="id">ID</label>
+  <input type="number" class="form-control" id="id" placeholder="Admin id" [(ngModel)]="customer.customerId" name="name">
+
+  <label for="name">Name</label>
+  <input type="text" class="form-control" id="name" placeholder="Admin Name" [(ngModel)]="customer.customerName" name="name">
+  
+  <label for="type">Type</label>
+  <input type="text" class="form-control" id="type" placeholder="type name" [(ngModel)]="customer.userType" name="name">
+
+  <label for="password">Password</label>
+  <input type="password" class="form-control" id="password" placeholder="password" [(ngModel)]="customer.password" name="password">
+
+   <br>
+  <button type="button" class="btn btn-success" (click)="addCustomer()" >Save</button>
+</form>

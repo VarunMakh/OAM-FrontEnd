@@ -1,0 +1,23 @@
+import { AddcustomerComponent } from './admin/users/customers/addcustomer/addcustomer.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { MedicinesComponent } from './admin/medicines/medicines.component';
+import { AddAdminComponent } from './admin/users/admins/add-admin/add-admin.component';
+import { AdminsComponent } from './admin/users/admins/admins.component';
+import { CustomersComponent } from './admin/users/customers/customers.component';
+import { UsersComponent } from './admin/users/users.component';
+
+const routes: Routes = [
+  { path: 'admin/users', component: UsersComponent },
+  { path: 'admin/users/admins', component: AdminsComponent },
+  { path: 'admin/users/customers', component: CustomersComponent },
+  { path : 'admin/medicines', component: MedicinesComponent},
+  { path : 'admin/users/admins/add-admin', component: AddAdminComponent},
+  { path : 'admin/users/customers/addcustomer', component: AddcustomerComponent}
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
