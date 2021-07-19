@@ -23,7 +23,7 @@
     </table>
   </div>
   <div class="col-md-6">
-    <app-add-medicine *ngIf="action === 'add'" [medicine]="selectedMedicine" (medicineAddedEvent)="refreshData()"></app-add-medicine>
+    <app-add-medicine *ngIf="action === 'edit' || action === 'add'"[medicine]="selectedMedicine" (medicineAddedEvent)="refreshData()"></app-add-medicine>
     <app-view-medicine *ngIf="action === 'view'" [medicine]="selectedMedicine" (medicineDeletedEvent)="refreshData()" ></app-view-medicine>
   </div>
 </div>

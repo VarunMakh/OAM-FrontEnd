@@ -40,4 +40,8 @@ export class ViewMedicineComponent implements OnInit {
     );
   }
 
+  editMedicine() {
+    this.router.navigate(['admin', 'medicines'], { queryParams: { action: 'edit', id: this.medicine.medicineId } });
+  }
+
 }

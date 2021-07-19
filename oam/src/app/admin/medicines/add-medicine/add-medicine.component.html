@@ -1,6 +1,10 @@
-<h1>Add Medicine</h1>
+<h1>{{medicine.medicineId == null ? 'Add' : 'Edit'}} Medicine {{medicine.medicineId}}</h1>
 
 <form>
+  <div class="form-group" *ngIf="medicine.medicineId != null">
+    <input type="hidden" class="form-control" id="medicineId" value="{{medicine.medicineId}}" placeholder="Medicine ID" [(ngModel)]="medicine.medicineId" name="medicineId">
+  </div>
+
   <label for="medicineName">Medicine Name</label>
   <input type="text" class="form-control" id="medicineName" placeholder="Medicine Name" [(ngModel)]="medicine.medicineName" name="medicineName">
 

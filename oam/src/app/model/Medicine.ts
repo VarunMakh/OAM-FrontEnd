@@ -8,4 +8,7 @@ export class Medicine {
     expiryDate:Date;
     company:string;
     category:Category;
+    constructor(){
+        this.category = new Category();
+    }
 }

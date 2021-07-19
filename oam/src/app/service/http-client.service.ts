@@ -19,12 +19,16 @@ export class HttpClientService {
     return this.httpClient.post<Medicine>('http://localhost:8090/medicines/add', newMedicine);
   }
 
-  viewMedicine(id) {
-    return this.httpClient.get<Medicine>('http://localhost:8090/medicines/view/' + id);
-  }
+  // viewMedicine(id) {
+  //   return this.httpClient.get<Medicine>('http://localhost:8090/medicines/view/' + id);
+  // }
 
   deleteMedicine(id) {
     return this.httpClient.delete<Medicine>('http://localhost:8090/medicines/delete/' + id);
+  }
+
+  updateMedicine(updatedMedicine: Medicine) {
+    return this.httpClient.put<Medicine>('http://localhost:8090/medicines/update', updatedMedicine);
   }
 
 }

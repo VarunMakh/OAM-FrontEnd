@@ -15,9 +15,6 @@ export class AddMedicineComponent implements OnInit {
   @Input()
   medicine: Medicine;
 
-  @Input()
-  category: Category;
-
   @Output()
   medicineAddedEvent = new EventEmitter();
 
@@ -30,12 +27,22 @@ export class AddMedicineComponent implements OnInit {
   }
 
   public saveMedicine() {
-    this.httpClientService.addMedicine(this.medicine).subscribe(
-      (medicine) => {
-        this.medicineAddedEvent.emit();
-        this.router.navigate(['admin', 'medicines']);
-      }
-    );
+    if(this.medicine.medicineId == null){
+      this.httpClientService.addMedicine(this.medicine).subscribe(
+        (medicine) => {
+          this.medicineAddedEvent.emit();
+          this.router.navigate(['admin', 'medicines']);
+        }
+      );
+    } else{
+      this.httpClientService.updateMedicine(this.medicine).subscribe(
+        (medicine) => {
+          this.medicineAddedEvent.emit();
+          this.router.navigate(['admin', 'medicines']);
+        }
+      );
+    }
+    
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Category } from 'src/app/model/Category';
 import { Medicine } from 'src/app/model/Medicine';
 import { HttpClientService } from 'src/app/service/http-client.service';
 
