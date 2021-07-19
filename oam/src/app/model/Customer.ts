@@ -1,6 +1,6 @@
 export class Customer {
     customerId:number;
-    password:String;
-    userType:String;
-    customerName:String;
+    password:string;
+    userType:string;
+    customerName:string;
 }

@@ -4,6 +4,7 @@ import { Medicine } from '../model/Medicine';
 import { User } from '../model/User';
 import { Admin } from '../model/Admin';
 import { Customer } from '../model/Customer';
+import { Login } from '../model/Login';
 
 @Injectable({
   providedIn: 'root'
@@ -55,6 +56,10 @@ export class HttpClientService {
 
   updateMedicine(updatedMedicine: Medicine) {
     return this.httpClient.put<Medicine>('http://localhost:8090/medicines/update', updatedMedicine);
+  }
+
+  loginUser(userDetails: Login) {
+    return this.httpClient.post<User>('http://localhost:8090/users/login', userDetails);
   }
 
 }

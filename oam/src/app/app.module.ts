@@ -12,6 +12,7 @@ import { ViewMedicineComponent } from './admin/medicines/view-medicine/view-medi
 import { UsersComponent } from './admin/users/users.component';
 import { AdminsComponent } from './admin/users/admins/admins.component';
 import { CustomersComponent } from './admin/users/customers/customers.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CustomersComponent } from './admin/users/customers/customers.component'
     UsersComponent,
     AdminsComponent,
     CustomersComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

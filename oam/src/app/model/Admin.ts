@@ -1,6 +1,6 @@
 export class Admin {
     adminId:number;
-    password:String;
-    userType:String;
-    adminName:String;
+    password:string;
+    userType:string;
+    adminName:string;
 }
