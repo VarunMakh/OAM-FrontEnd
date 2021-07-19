@@ -1,0 +1,24 @@
+<h1>Admins (Admin access)</h1>
+<div class="container row">
+    <div class="col-md-6">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let admin of admins" >
+        <td>{{admin.adminId}}</td>
+        <td>{{admin.adminName}}</td>
+        <td><button type="button" class="btn btn-primary">Show Details</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    Display Admin Details and Add user here.
+  </div>
+</div>

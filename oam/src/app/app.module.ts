@@ -9,6 +9,9 @@ import { MedicinesComponent } from './admin/medicines/medicines.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddMedicineComponent } from './admin/medicines/add-medicine/add-medicine.component';
 import { ViewMedicineComponent } from './admin/medicines/view-medicine/view-medicine.component';
+import { UsersComponent } from './admin/users/users.component';
+import { AdminsComponent } from './admin/users/admins/admins.component';
+import { CustomersComponent } from './admin/users/customers/customers.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { ViewMedicineComponent } from './admin/medicines/view-medicine/view-medi
     MenuComponent,
     MedicinesComponent,
     AddMedicineComponent,
-    ViewMedicineComponent
+    ViewMedicineComponent,
+    UsersComponent,
+    AdminsComponent,
+    CustomersComponent,
   ],
   imports: [
     BrowserModule,
