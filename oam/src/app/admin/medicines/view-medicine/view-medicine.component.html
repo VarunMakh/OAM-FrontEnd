@@ -1,0 +1,40 @@
+<h1>Medicine Details</h1>
+    <!-- <div (ngInit)="getMedicine()"></div> -->
+    <table>
+        <tr>
+            <td>Medicine Id</td>
+            <td>{{medicine.medicineId}}</td>
+        </tr>
+        <tr>
+            <td>Medicine Name</td>
+            <td>{{medicine.medicineName}}</td>
+        </tr>
+        <tr>
+            <td>Medicine Cost</td>
+            <td>{{medicine.medicineCost}}</td>
+        </tr>
+        <tr>
+            <td>Manufacturing Date</td>
+            <td>{{medicine.mfd}}</td>
+        </tr>
+        <tr>
+            <td>Expiry Date</td>
+            <td>{{medicine.expiryDate}}</td>
+        </tr>
+        <tr>
+            <td>Company</td>
+            <td>{{medicine.company}}</td>
+        </tr>
+        <tr>
+            <td>Category ID</td>
+            <td>{{medicine.category.categoryId}}</td>
+        </tr>
+        <tr>
+            <td>Category Name</td>
+            <td>{{medicine.category.categoryName}}</td>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <a class="btn btn-small btn-danger" (click)="deleteMedicine()">delete</a>

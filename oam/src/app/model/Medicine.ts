@@ -1,9 +1,11 @@
+import { Category } from "./Category";
+
 export class Medicine {
     medicineId:number;
     medicineName:string;
     medicineCost:number;
-    mfd:string;
-    expiryDate:string;
+    mfd:Date;
+    expiryDate:Date;
     company:string;
-    categoryId:number;
+    category:Category
 }

@@ -1,0 +1,23 @@
+<h1>Add Medicine</h1>
+
+<form>
+  <label for="medicineName">Medicine Name</label>
+  <input type="text" class="form-control" id="medicineName" placeholder="Medicine Name" [(ngModel)]="medicine.medicineName" name="medicineName">
+
+  <label for="medicineCost">Medicine Cost</label>
+  <input type="number" class="form-control" id="medicineCost" placeholder="Medicine Cost" name="medicineCost" [(ngModel)]="medicine.medicineCost">
+
+  <label for="mfd">Manufacturing Date</label>
+  <input type="date" class="form-control" id="mfd" placeholder="Manufacturing Date" name="mfd" [(ngModel)]="medicine.mfd">
+
+  <label for="expiryDate">Expiry Date</label>
+  <input type="date" class="form-control" id="expiryDate" placeholder="Expiry Date" name="expiryDate" [(ngModel)]="medicine.expiryDate">
+
+  <label for="company">Company</label>
+  <input type="text" class="form-control" id="company" placeholder="Company" name="company" [(ngModel)]="medicine.company">
+
+  <label for="categoryId">Category ID</label>
+  <input type="number" class="form-control" id="category.categoryId" placeholder="Category ID" name="category.categoryId" [(ngModel)]="medicine.category.categoryId">
+  <br>
+  <button type="button" class="btn btn-success" (click)="saveMedicine()">Save Medicine</button>
+</form>

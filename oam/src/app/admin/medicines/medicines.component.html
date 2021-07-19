@@ -1,5 +1,6 @@
-<h1>Medicines (Admin access)</h1>
+<h1> Medicines (Admin access)</h1>
 
+<a class="btn btn-primary" (click)="addMedicine()">Add New Medicine</a>
 <div class="container row">
   <div class="col-md-6">
     <table class="table">
@@ -15,13 +16,14 @@
           <td>{{medicine.medicineId}}</td>
           <td>{{medicine.medicineName}}</td>
           <td>
-            <button type="button" class="btn btn-primary">Show Details</button>
+            <button type="button" class="btn btn-primary" (click)="viewMedicine(medicine.medicineId)">Show Details</button>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
   <div class="col-md-6">
-    View Medicine Details/Add Medicine
+    <app-add-medicine *ngIf="action === 'add'" [medicine]="selectedMedicine" (medicineAddedEvent)="refreshData()"></app-add-medicine>
+    <app-view-medicine *ngIf="action === 'view'" [medicine]="selectedMedicine" (medicineDeletedEvent)="refreshData()" ></app-view-medicine>
   </div>
 </div>
