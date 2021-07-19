@@ -16,8 +16,9 @@
   <label for="company">Company</label>
   <input type="text" class="form-control" id="company" placeholder="Company" name="company" [(ngModel)]="medicine.company">
 
-  <label for="categoryId">Category ID</label>
+  <label for="category.categoryId">Category ID</label>
   <input type="number" class="form-control" id="category.categoryId" placeholder="Category ID" name="category.categoryId" [(ngModel)]="medicine.category.categoryId">
+
   <br>
   <button type="button" class="btn btn-success" (click)="saveMedicine()">Save Medicine</button>
 </form>

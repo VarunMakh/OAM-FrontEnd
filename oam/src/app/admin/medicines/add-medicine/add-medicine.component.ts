@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Category } from 'src/app/model/Category';
 import { Medicine } from 'src/app/model/Medicine';
 import { HttpClientService } from 'src/app/service/http-client.service';
 
@@ -13,6 +14,9 @@ export class AddMedicineComponent implements OnInit {
 
   @Input()
   medicine: Medicine;
+
+  @Input()
+  category: Category;
 
   @Output()
   medicineAddedEvent = new EventEmitter();
