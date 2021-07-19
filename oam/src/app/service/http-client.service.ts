@@ -5,6 +5,7 @@ import { User } from '../model/User';
 import { Admin } from '../model/Admin';
 import { Customer } from '../model/Customer';
 import { Login } from '../model/Login';
+import { Order } from '../model/Order';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,11 @@ export class HttpClientService {
   getUsers()
   {
     return this.httpClient.get<User[]>('http://localhost:8090/users/showAll');
+  }
+
+  getOrders()
+  {
+    return this.httpClient.get<Order[]>('http://localhost:8090/orders/showAllOrders');
   }
 
   getAdmins()

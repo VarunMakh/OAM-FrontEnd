@@ -1,11 +1,17 @@
-<div class="container">
-    <div>
-    User Name : <input type="text" name="username" [(ngModel)]="login.userId">
-    </div>
-    <div>
-    Password : <input type="password" name="password" [(ngModel)]="login.password">
-    </div>
-    <button class="btn btn-success" (click)="checkLogin()">
-    Login
-    </button>
-  </div>
+<h1>Welcome to OAM!</h1>
+<h2>Please Login</h2>
+
+<form>
+  <!-- <div class="form-group" *ngIf="medicine.medicineId != null">
+    <input type="hidden" class="form-control" id="medicineId" value="{{medicine.medicineId}}" placeholder="Medicine ID" [(ngModel)]="medicine.medicineId" name="medicineId">
+  </div> -->
+
+  <label for="userId">User ID</label>
+  <input type="number" class="form-control" id="userId" placeholder="User ID" name="userId" [(ngModel)]="loginDetails.userId">
+
+  <label for="password">Password</label>
+  <input type="password" class="form-control" id="password" placeholder="Password" name="password" [(ngModel)]="loginDetails.password">
+
+  <br>
+  <button type="button" class="btn btn-success" (click)="checkLogin()">Login</button>
+</form>

@@ -5,9 +5,13 @@ import { AdminsComponent } from './admin/users/admins/admins.component';
 import { CustomersComponent } from './admin/users/customers/customers.component';
 import { UsersComponent } from './admin/users/users.component';
 import { LoginComponent } from './login/login.component';
+import { OrderComponent } from './shop/order/order.component';
+import { ShopComponent } from './shop/shop.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
+  { path: 'shop', component: ShopComponent },
+  { path: 'shop/order', component: OrderComponent },
   { path: 'admin/users', component: UsersComponent },
   { path: 'admin/users/admins', component: AdminsComponent },
   { path: 'admin/users/customers', component: CustomersComponent },

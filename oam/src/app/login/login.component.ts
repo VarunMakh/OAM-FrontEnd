@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Login } from '../model/Login';
 import { User } from '../model/User';
 import { HttpClientService } from '../service/http-client.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private httpClientService: HttpClientService,
     private router: Router,
+    private toastr: ToastrService,
   ) { }
 
   ngOnInit() {
@@ -25,15 +27,16 @@ export class LoginComponent implements OnInit {
   checkLogin() {
     this.httpClientService.loginUser(this.loginDetails).subscribe(
       result => {
-        if(result.userId == null){
-          this.router.navigate(['login']);
-        } else {
+        if(result.userId){
           sessionStorage.setItem('userId',""+result.userId);
           sessionStorage.setItem('userName',result.userName);
           sessionStorage.setItem('userType',result.userType);
+          this.router.navigate(['admin', 'medicines']);
+          this.toastr.success("Login Successful!");
+        } else {
+          this.router.navigate(['login']);
+          this.toastr.error("Login Failed!");
         }
-        
-        this.router.navigate(['admin', 'medicines']);
       }
     );
   }

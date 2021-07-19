@@ -13,6 +13,11 @@ import { UsersComponent } from './admin/users/users.component';
 import { AdminsComponent } from './admin/users/admins/admins.component';
 import { CustomersComponent } from './admin/users/customers/customers.component';
 import { LoginComponent } from './login/login.component';
+import { ToastrModule } from 'ngx-toastr';  
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ShopComponent } from './shop/shop.component';
+import { OrderComponent } from './shop/order/order.component';
+import { ViewOrderComponent } from './shop/order/view-order/view-order.component';  
 
 @NgModule({
   declarations: [
@@ -25,12 +30,17 @@ import { LoginComponent } from './login/login.component';
     AdminsComponent,
     CustomersComponent,
     LoginComponent,
+    ShopComponent,
+    OrderComponent,
+    ViewOrderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
