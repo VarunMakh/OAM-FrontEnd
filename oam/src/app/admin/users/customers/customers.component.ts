@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { ActivatedRoute, Router } from '@angular/router';
+=======
+>>>>>>> da0dba5a4cdbb7f9229c4d01af6f879b98a753a8
 import { Customer } from 'src/app/model/Customer';
 import { HttpClientService } from 'src/app/service/http-client.service';
 
@@ -10,6 +13,7 @@ import { HttpClientService } from 'src/app/service/http-client.service';
 })
 export class CustomersComponent implements OnInit {
 
+<<<<<<< HEAD
   
 
   selectedUser: Customer;
@@ -64,4 +68,22 @@ export class CustomersComponent implements OnInit {
       }
     );
   }
+=======
+  customers:Array<Customer>;
+
+  constructor(
+    private httpClientService: HttpClientService
+  ) { }
+
+  ngOnInit() {
+    this.httpClientService.getCustomers().subscribe(
+      response => this.handleSuccessfulResponse(response),
+    );
+  }
+
+  handleSuccessfulResponse(response: Customer[]) {
+    this.customers = response;  
+  }
+
+>>>>>>> da0dba5a4cdbb7f9229c4d01af6f879b98a753a8
 }

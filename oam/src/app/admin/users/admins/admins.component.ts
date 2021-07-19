@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Admin } from 'src/app/model/Admin';
 import { HttpClientService } from 'src/app/service/http-client.service';
+<<<<<<< HEAD
 import { ActivatedRoute, Router } from '@angular/router';
+=======
+>>>>>>> da0dba5a4cdbb7f9229c4d01af6f879b98a753a8
 
 @Component({
   selector: 'app-admins',
@@ -11,6 +14,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AdminsComponent implements OnInit {
 
   admins: Array<Admin>;
+<<<<<<< HEAD
   selectedUser: Admin;
   action: string;
 
@@ -61,6 +65,21 @@ export class AdminsComponent implements OnInit {
   handleSuccessfulResponse(response) {
     this.admins = response;
     console.log(this.admins);
+=======
+
+  constructor(
+    private httpClientService: HttpClientService
+  ) { }
+
+  ngOnInit() {
+    this.httpClientService.getAdmins().subscribe(
+      response => this.handleSuccessfulResponse(response),
+    );
+  }
+
+  handleSuccessfulResponse(response: Admin[]) {
+    this.admins = response;  
+>>>>>>> da0dba5a4cdbb7f9229c4d01af6f879b98a753a8
   }
 
 }
