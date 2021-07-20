@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { User } from 'src/app/model/User';
+import { UserDTO } from 'src/app/model/UserDTO';
 import { HttpClientService } from 'src/app/service/http-client.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { HttpClientService } from 'src/app/service/http-client.service';
 })
 export class UsersComponent implements OnInit {
 
-  users: Array<User>;
+  users: Array<UserDTO>;
 
   constructor(
     private httpClientService: HttpClientService
@@ -24,7 +24,7 @@ export class UsersComponent implements OnInit {
 
   }
 
-  handleSuccessfulResponse(response: User[]) {
+  handleSuccessfulResponse(response: UserDTO[]) {
     this.users = response;  
   }
 

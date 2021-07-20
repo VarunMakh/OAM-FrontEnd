@@ -1,5 +1,8 @@
 export class User {
-    userId:number;
+    userId:string;
+    password:string;
     userType:string;
-    userName:string;
+    constructor(){
+        this.userType = null;
+    }
 }

@@ -13,7 +13,7 @@ export class MedicinesComponent implements OnInit {
 
   medicines: Array<Medicine>;
   selectedMedicine: Medicine;
-  action: string;
+  action:string;
 
   constructor(
     private httpClientService: HttpClientService,

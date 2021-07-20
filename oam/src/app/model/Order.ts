@@ -1,4 +1,4 @@
-import { Customer } from "./Customer";
+import { CustomerDTO } from "./CustomerDTO";
 import { Medicine } from "./Medicine";
 
 export class Order {
@@ -7,10 +7,10 @@ export class Order {
     medicineList:Array<Medicine>;
     dispatchDate:Date;
     totalCost:number;
-    customer:Customer;
-    orderStatus:string;
+    customerDto:CustomerDTO;
+    status:string;
     constructor(){
         this.medicineList = [];
-        this.customer = new Customer();
+        this.customerDto = new CustomerDTO();
     }
 }

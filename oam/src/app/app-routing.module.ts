@@ -7,9 +7,11 @@ import { UsersComponent } from './admin/users/users.component';
 import { LoginComponent } from './login/login.component';
 import { OrderComponent } from './shop/order/order.component';
 import { ShopComponent } from './shop/shop.component';
+import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent },
   { path: 'shop', component: ShopComponent },
   { path: 'shop/order', component: OrderComponent },
   { path: 'admin/users', component: UsersComponent },

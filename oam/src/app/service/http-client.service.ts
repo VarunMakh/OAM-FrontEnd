@@ -4,8 +4,9 @@ import { Medicine } from '../model/Medicine';
 import { User } from '../model/User';
 import { Admin } from '../model/Admin';
 import { Customer } from '../model/Customer';
-import { Login } from '../model/Login';
 import { Order } from '../model/Order';
+import { Observable } from 'rxjs';
+import { UserDTO } from '../model/UserDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class HttpClientService {
 
   getUsers()
   {
-    return this.httpClient.get<User[]>('http://localhost:8090/users/showAll');
+    return this.httpClient.get<UserDTO[]>('http://localhost:8090/users/showAll');
   }
 
   getOrders()
@@ -60,12 +61,16 @@ export class HttpClientService {
     return this.httpClient.delete<Medicine>('http://localhost:8090/medicines/delete/' + id);
   }
 
+  deleteOrder(id) {
+    return this.httpClient.delete<Order>('http://localhost:8090/orders/cancel/' + id);
+  }
+
   updateMedicine(updatedMedicine: Medicine) {
     return this.httpClient.put<Medicine>('http://localhost:8090/medicines/update', updatedMedicine);
   }
 
-  loginUser(userDetails: Login) {
-    return this.httpClient.post<User>('http://localhost:8090/users/login', userDetails);
+  loginUser(userDetails: any): Observable<any> {
+    return this.httpClient.post<UserDTO>('http://localhost:8090/users/login', userDetails);
   }
 
 }

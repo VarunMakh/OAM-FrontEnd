@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Order } from 'src/app/model/Order';
+import { HttpClientService } from 'src/app/service/http-client.service';
 
 @Component({
   selector: 'app-view-order',
@@ -11,9 +13,24 @@ export class ViewOrderComponent implements OnInit {
   @Input()
   order:Order;
 
-  constructor() { }
+  @Output()
+  orderDeletedEvent = new EventEmitter();
 
-  ngOnInit(): void {
+  constructor(
+    private httpClientService: HttpClientService, 
+    private router: Router
+  ) { }
+
+  ngOnInit() {
+  }
+
+  removeOrder() {
+    this.httpClientService.deleteOrder(this.order.orderId).subscribe(
+      (order) => {
+        this.orderDeletedEvent.emit();
+        this.router.navigate(['shop', 'order']);
+      }
+    );
   }
 
 }

@@ -10,6 +10,8 @@ export class Medicine {
     category:Category;
     isAdded: boolean;
     constructor(){
+        this.mfd = null;
+        this.company = null;
         this.category = new Category();
         this.isAdded = false;
     }

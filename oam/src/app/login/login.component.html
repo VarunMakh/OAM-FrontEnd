@@ -7,10 +7,10 @@
   </div> -->
 
   <label for="userId">User ID</label>
-  <input type="number" class="form-control" id="userId" placeholder="User ID" name="userId" [(ngModel)]="loginDetails.userId">
+  <input type="text" class="form-control" id="userId" placeholder="User ID" name="userId" [(ngModel)]="user.userId">
 
   <label for="password">Password</label>
-  <input type="password" class="form-control" id="password" placeholder="Password" name="password" [(ngModel)]="loginDetails.password">
+  <input type="password" class="form-control" id="password" placeholder="Password" name="password" [(ngModel)]="user.password">
 
   <br>
   <button type="button" class="btn btn-success" (click)="checkLogin()">Login</button>

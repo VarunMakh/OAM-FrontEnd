@@ -12,7 +12,7 @@ export class OrderComponent implements OnInit {
 
   orders:Array<Order>;
   selectedOrder:Order;
-  action: string;
+  action:string;
 
   constructor(
     private httpClientService: HttpClientService,
