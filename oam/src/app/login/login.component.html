@@ -2,9 +2,6 @@
 <h2>Please Login</h2>
 
 <form>
-  <!-- <div class="form-group" *ngIf="medicine.medicineId != null">
-    <input type="hidden" class="form-control" id="medicineId" value="{{medicine.medicineId}}" placeholder="Medicine ID" [(ngModel)]="medicine.medicineId" name="medicineId">
-  </div> -->
 
   <label for="userId">User ID</label>
   <input type="text" class="form-control" id="userId" placeholder="User ID" name="userId" [(ngModel)]="user.userId">
@@ -14,4 +11,5 @@
 
   <br>
   <button type="button" class="btn btn-success" (click)="checkLogin()">Login</button>
+  
 </form>

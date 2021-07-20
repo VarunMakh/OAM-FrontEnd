@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LogoutServiceService } from '../service/logout-service.service';
-
+import { AuthService } from '../service/auth.service';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -9,10 +8,10 @@ import { LogoutServiceService } from '../service/logout-service.service';
 export class MenuComponent implements OnInit {
 
   constructor(
-    public logoutService:LogoutServiceService
+    public authService:AuthService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }

@@ -53,10 +53,6 @@ export class HttpClientService {
     return this.httpClient.post<User>('http://localhost:8090/customers/add', newCustomer);
   }
 
-  // viewMedicine(id) {
-  //   return this.httpClient.get<Medicine>('http://localhost:8090/medicines/view/' + id);
-  // }
-
   deleteMedicine(id) {
     return this.httpClient.delete<Medicine>('http://localhost:8090/medicines/delete/' + id);
   }

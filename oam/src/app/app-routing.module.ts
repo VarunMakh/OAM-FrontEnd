@@ -11,13 +11,13 @@ import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'logout', component: LogoutComponent },
   { path: 'shop', component: ShopComponent },
   { path: 'shop/order', component: OrderComponent },
   { path: 'admin/users', component: UsersComponent },
   { path: 'admin/users/admins', component: AdminsComponent },
   { path: 'admin/users/customers', component: CustomersComponent },
-  { path: 'admin/medicines', component: MedicinesComponent}
+  { path: 'admin/medicines', component: MedicinesComponent},
+  { path: 'logout', component: LogoutComponent }
 ];
 
 @NgModule({

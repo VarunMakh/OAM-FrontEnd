@@ -16,7 +16,9 @@ import { LoginComponent } from './login/login.component';
 import { ToastrModule } from 'ngx-toastr';  
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ShopComponent } from './shop/shop.component';
-import { OrderComponent } from './shop/order/order.component';  
+import { OrderComponent } from './shop/order/order.component';
+import { ViewOrderComponent } from './shop/order/view-order/view-order.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { OrderComponent } from './shop/order/order.component';
     CustomersComponent,
     LoginComponent,
     ShopComponent,
-    OrderComponent
+    OrderComponent,
+    ViewOrderComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

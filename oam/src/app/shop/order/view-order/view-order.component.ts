@@ -32,5 +32,4 @@ export class ViewOrderComponent implements OnInit {
       }
     );
   }
-
 }
