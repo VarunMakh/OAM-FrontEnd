@@ -7,6 +7,7 @@ import { Customer } from '../model/Customer';
 import { Order } from '../model/Order';
 import { Observable } from 'rxjs';
 import { UserDTO } from '../model/UserDTO';
+import { PlaceOrder } from '../model/PlaceOrder';
 
 @Injectable({
   providedIn: 'root'
@@ -67,6 +68,10 @@ export class HttpClientService {
 
   loginUser(userDetails: any): Observable<any> {
     return this.httpClient.post<UserDTO>('http://localhost:8090/users/login', userDetails);
+  }
+
+  addOrder(newOrder: PlaceOrder) {
+    return this.httpClient.post<Order>('http://localhost:8090/orders/add', newOrder);
   }
 
 }

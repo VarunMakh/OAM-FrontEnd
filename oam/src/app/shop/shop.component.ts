@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Medicine } from '../model/Medicine';
+import { PlaceOrder } from '../model/PlaceOrder';
 import { HttpClientService } from '../service/http-client.service';
 
 @Component({
@@ -12,6 +13,8 @@ export class ShopComponent implements OnInit {
 
   medicines: Array<Medicine>;
 
+  order: PlaceOrder;
+
   cartMedicines: any;
 
   constructor(
@@ -19,9 +22,14 @@ export class ShopComponent implements OnInit {
     private httpClientService: HttpClientService,
   ) {
     this.medicines = [];
+    this.order = new PlaceOrder();
    }
 
   ngOnInit() {
+    this.refreshData();
+  }
+
+  refreshData() {
     this.httpClientService.getMedicines().subscribe(
       response => this.handleSuccessfulResponse(response),
     );
@@ -59,11 +67,19 @@ export class ShopComponent implements OnInit {
     this.cartMedicines = cartData;
   }
 
-  addOrder() {
-    this.router.navigate(['cart']);
+  placeOrder() {
+    this.order.medicineList = this.cartMedicines;
+    this.order.customer.userId = +sessionStorage.getItem('userId');
+    this.order.status = "PLACED";
+    this.httpClientService.addOrder(this.order).subscribe(
+      (order) => {
+        this.router.navigate(['shop','order']);
+      }
+    );
   }
 
   emptyCart() {
+    this.refreshData();
     this.cartMedicines = [];
     localStorage.clear();
   }
