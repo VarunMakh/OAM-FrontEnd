@@ -1,4 +1,5 @@
 <h1>Customers (Admin access)</h1>
+<a class="btn btn-primary mb-3" (click)="addCustomer()">add</a>
 <div class="container row">
     <div class="col-md-6">
     <table class="table">
@@ -13,12 +14,13 @@
       <tr *ngFor="let customer of customers" >
         <td>{{customer.customerId}}</td>
         <td>{{customer.customerName}}</td>
-        <td><button type="button" class="btn btn-primary">Show Details</button></td>
+        <td><button type="button" class="btn btn-primary" (click)="viewCustomer(customer.customerId)">Show Details</button></td>
       </tr>
       </tbody>
     </table>
   </div>
   <div class="col-md-6">
-    Display Customer Details and Add user here.
+    <app-add-customer *ngIf="action === 'edit' || action === 'add'"  [customer]="selectedCustomer" (customerAddedEvent)="refreshData()"></app-add-customer>
+    <app-view-customer *ngIf="action === 'view'" [customer]="selectedCustomer" (customerDeletedEvent)="refreshData()"></app-view-customer>
   </div>
 </div>

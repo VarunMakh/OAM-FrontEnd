@@ -1,0 +1,16 @@
+<h1>{{admin.adminId == null ? 'Add' : 'Edit'}} Admin {{admin.adminId}}</h1>
+<form #recievedUser="ngForm">
+
+    <div class="form-group" *ngIf="admin.adminId != null">
+        <input type="hidden" class="form-control" id="id" value="{{admin.adminId}}" name="Admin ID" [(ngModel)]="admin.adminId">
+      </div>
+
+  <label for="name">Name</label>
+  <input type="text" class="form-control" id="name" placeholder="Admin Name" [(ngModel)]="admin.adminName" name="name">
+
+  <label for="password">Password</label>
+  <input type="password" class="form-control" id="password" placeholder="password" [(ngModel)]="admin.password" name="password">
+
+   <br>
+  <button type="button" class="btn btn-success" (click)="saveAdmin()">Save Admin</button>
+</form>

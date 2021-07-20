@@ -19,6 +19,11 @@ import { ShopComponent } from './shop/shop.component';
 import { OrderComponent } from './shop/order/order.component';
 import { ViewOrderComponent } from './shop/order/view-order/view-order.component';
 import { LogoutComponent } from './logout/logout.component';
+import { AddAdminComponent } from './admin/users/admins/add-admin/add-admin.component';
+import { ViewAdminComponent } from './admin/users/admins/view-admin/view-admin.component';
+import { AddCustomerComponent } from './admin/users/customers/add-customer/add-customer.component';
+import { ViewCustomerComponent } from './admin/users/customers/view-customer/view-customer.component';
+import { OrdersComponent } from './admin/orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +39,12 @@ import { LogoutComponent } from './logout/logout.component';
     ShopComponent,
     OrderComponent,
     ViewOrderComponent,
-    LogoutComponent
+    LogoutComponent,
+    AddAdminComponent,
+    ViewAdminComponent,
+    AddCustomerComponent,
+    ViewCustomerComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,

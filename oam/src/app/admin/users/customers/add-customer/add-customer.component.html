@@ -1,0 +1,16 @@
+<h1>{{customer.customerId == null ? 'Add' : 'Edit'}} Customer {{customer.customerId}}</h1>
+<form #recievedUser="ngForm">
+
+    <div class="form-group" *ngIf="customer.customerId != null">
+        <input type="hidden" class="form-control" id="id" value="{{customer.customerId}}" name="Customer ID" [(ngModel)]="customer.customerId">
+      </div>
+
+  <label for="name">Name</label>
+  <input type="text" class="form-control" id="name" placeholder="Customer Name" [(ngModel)]="customer.customerName" name="name">
+
+  <label for="password">Password</label>
+  <input type="password" class="form-control" id="password" placeholder="password" [(ngModel)]="customer.password" name="password">
+
+   <br>
+  <button type="button" class="btn btn-success" (click)="saveCustomer()">Save Customer</button>
+</form>

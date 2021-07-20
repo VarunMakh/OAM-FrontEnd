@@ -76,6 +76,7 @@ export class ShopComponent implements OnInit {
         this.router.navigate(['shop','order']);
       }
     );
+    this.emptyCart();
   }
 
   emptyCart() {

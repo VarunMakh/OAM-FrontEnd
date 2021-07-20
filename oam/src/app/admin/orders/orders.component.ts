@@ -5,11 +5,11 @@ import { Order } from 'src/app/model/Order';
 import { HttpClientService } from 'src/app/service/http-client.service';
 
 @Component({
-  selector: 'app-order',
-  templateUrl: './order.component.html',
-  styleUrls: ['./order.component.css']
+  selector: 'app-orders',
+  templateUrl: './orders.component.html',
+  styleUrls: ['./orders.component.css']
 })
-export class OrderComponent implements OnInit {
+export class OrdersComponent implements OnInit {
 
   orders:Array<Order>;
   selectedOrder:Order;
@@ -30,8 +30,7 @@ export class OrderComponent implements OnInit {
   }
 
   refreshData() {
-    this.customer.userId = +sessionStorage.getItem('userId');
-    this.httpClientService.getOrdersByCustomer(this.customer).subscribe(
+    this.httpClientService.getOrders().subscribe(
       response => this.handleSuccessfulResponse(response)
     );
     this.activedRoute.queryParams.subscribe(
@@ -52,7 +51,7 @@ export class OrderComponent implements OnInit {
   }
 
   viewOrder(id: number) {
-    this.router.navigate(['shop', 'order'], { queryParams: { id, action: 'view' } });
+    this.router.navigate(['admin', 'orders'], { queryParams: { id, action: 'view' } });
   }
 
 }

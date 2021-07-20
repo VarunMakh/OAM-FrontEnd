@@ -1,4 +1,5 @@
 <h1>Admins (Admin access)</h1>
+<a class="btn btn-primary mb-3" (click)="addAdmin()">add</a>
 <div class="container row">
     <div class="col-md-6">
     <table class="table">
@@ -13,12 +14,13 @@
       <tr *ngFor="let admin of admins" >
         <td>{{admin.adminId}}</td>
         <td>{{admin.adminName}}</td>
-        <td><button type="button" class="btn btn-primary">Show Details</button></td>
+        <td><button type="button" class="btn btn-primary" (click)="viewAdmin(admin.adminId)">Show Details</button></td>
       </tr>
       </tbody>
     </table>
   </div>
   <div class="col-md-6">
-    Display Admin Details and Add user here.
+    <app-add-admin *ngIf="action === 'edit' || action === 'add'"  [admin]="selectedAdmin" (adminAddedEvent)="refreshData()"></app-add-admin>
+    <app-view-admin *ngIf="action === 'view'" [admin]="selectedAdmin" (adminDeletedEvent)="refreshData()"></app-view-admin>
   </div>
 </div>

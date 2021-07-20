@@ -23,14 +23,6 @@ export class ViewMedicineComponent implements OnInit {
 
   ngOnInit() {}
 
-  // getMedicine() {
-  //   this.httpClientService.viewMedicine(this.medicine.medicineId).subscribe(
-  //     (medicine) => {
-  //       this.router.navigate(['admin', 'medicines']);
-  //     }
-  //   );
-  // }
-
   deleteMedicine() {
     this.httpClientService.deleteMedicine(this.medicine.medicineId).subscribe(
       (medicine) => {

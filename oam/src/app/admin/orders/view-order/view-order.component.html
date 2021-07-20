@@ -1,0 +1,38 @@
+<h1>Order Details</h1>
+
+    <table>
+        <tr>
+            <td>Order Id</td>
+            <td>{{order.orderId}}</td>
+        </tr>
+        <tr>
+            <td>Order Date</td>
+            <td>{{order.orderDate}}</td>
+        </tr>
+        <tr>
+            <td>Order Cost</td>
+            <td>{{order.totalCost}}</td>
+        </tr>
+        <tr>
+            <td>Dispatch Date</td>
+            <td>{{order.dispatchDate}}</td>
+        </tr>
+        <tr>
+            <td>Customer ID</td>
+            <td>{{order.customerDto.customerId}}</td>
+        </tr>
+        <tr>
+            <td>Order Status</td>
+            <td>{{order.status}}</td>
+        </tr>
+        <tr>
+            <td colspan="2">Medicine List</td>
+        </tr>
+        <tr *ngFor="let medicine of order.medicineList">
+            <td>Medicine Details</td>
+            <td>{{medicine.medicineName}}, ₹{{medicine.medicineCost}}</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <a class="btn btn-small btn-danger" (click)="removeOrder()">delete</a>
